@@ -1,0 +1,62 @@
+<div class="container">
+  <div *ngIf="pokemon" class="row">
+    <div class="col">
+      <p><strong>Identifier: </strong> {{ pokemon.id }}</p>
+
+      <button
+        mat-raised-button
+        color="primary"
+        aria-label="Show all details"
+        (click)="showDetails()"
+        class="btn-shown"
+      >
+        {{ textDetails }}
+      </button>
+
+      <div *ngIf="isShownDetails">
+        <mat-accordion>
+          <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title> Name </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>{{ pokemon.species.name }}</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title> Weight </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>{{ pokemon.weight }}</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title> Height </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>{{ pokemon.height }}</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title> Url </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>{{ pokemon.species.url }}</p>
+          </mat-expansion-panel>
+          <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title> Imagen </mat-panel-title>
+            </mat-expansion-panel-header>
+            <img
+              style="width: 80%; height: 80%"
+              class="rounded"
+              src="{{ pokemon.imagen }}"
+              alt=""
+            />
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <button mat-raised-button color="warn" aria-label="Back" routerLink="/">
+        Back
+      </button>
+    </div>
+  </div>
+</div>
