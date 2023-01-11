@@ -1,15 +1,14 @@
-<!-- <span>ID</span>
-<span>Name</span>
-<span>URL</span>
-<div>
-  <div
-    role="row"
-    tabindex="0"
-    *ngFor="let pokemon of pokemons"
-    [routerLink]="['/details', pokemon.id]"
-  >
-    <span role="cell">{{ pokemon.id }}</span>
-    <span role="cell">{{ pokemon.species.name }}</span>
-    <span role="cell">{{ pokemon.species.url }}</span>
-  </div>
-</div> -->
+<table>
+  <tr>
+    <th>ID</th>
+    <th>NAME</th>
+    <th>URL</th>
+  </tr>
+  <ng-container *ngFor="let pokemon of pokemons">
+    <tr [routerLink]="['/details', pokemon.id]">
+      <td>{{ pokemon.id }}</td>
+      <td>{{ pokemon.species.name }}</td>
+      <td>{{ pokemon.species.url }}</td>
+    </tr>
+  </ng-container>
+</table>
